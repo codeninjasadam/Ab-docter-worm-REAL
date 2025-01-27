@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class LaserSwitch : MonoBehaviour
 {
     private GameObject switchIcon;
     private AudioSource playBeep;
-
+    public bool lazersAreOff = false;
 
 
     private void Start()
@@ -22,6 +23,7 @@ public class LaserSwitch : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         playBeep.Play();
+        lazersAreOff = true;
     }
 
     public void OnTriggerStay(Collider other)
